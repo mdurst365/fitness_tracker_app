@@ -5,9 +5,13 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 
 const PORT = process.env.PORT || 3000;
+var db = require("./Models");
 
 //setup express
 const app = express();
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static("public"));
 
 //mongoose database connection
 mongoose.connect(
@@ -16,14 +20,6 @@ process.env.MONGODB_URI, {
   useFindAndModify: false,
   useUnifiedTopology: true
 })
-
-//call morgan
-app.use(fitlogger("dev"));
-
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-app.use(express.static("public"));
 
 // routes
 app.use(require("./routes/html_routes"));

@@ -2,9 +2,20 @@
 const express = require("express");
 const fitlogger = require("morgan");
 const mongoose = require("mongoose");
-const dotenv = require("dotenv");
+require("dotenv").config();
 
 const PORT = process.env.PORT || 3000;
+
+//setup express
+const app = express();
+
+//mongoose database connection
+mongoose.connect(
+    process.env.MONGODB_URI,
+    { useNewUrlParser: true },
+    { useFindAndModify: false },
+    { useUnifiedTopology: true } 
+  );
 
 //use morgan middleware
 app.use(fitlogger("dev"));

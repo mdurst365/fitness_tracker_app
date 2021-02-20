@@ -1,5 +1,7 @@
 let mongoose = require("mongoose");
 let db = require("../models");
+const keys = require("../config/keys");
+require()
 
 mongoose.connect("mongodb://localhost/workout", {
   useNewUrlParser: true,

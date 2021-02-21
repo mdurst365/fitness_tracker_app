@@ -12,6 +12,10 @@ The user should be able to:
 - [X] View the combined weight of multiple exercises from the past seven workouts on the `stats` page.
 - [X] View the total duration of each workout from the past seven workouts on the `stats` page.
 
+## ScreenCapture from LocalHost
+![Walkthrough](https://raw.githubusercontent.com/mdurst365/fitness_tracker_app/main/walkthrough.gif)
+
 ## Live on Heroku
 
 https://boiling-temple-11993.herokuapp.com/
+
